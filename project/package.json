@@ -1,7 +1,7 @@
 {
-  "name": "slim",
+  "name": "WhatCraft",
   "version": "1.0.0",
-  "description": "Responsive Bootstrap 4 Admin Template",
+  "description": "WhatCraft",
   "main": "index.js",
   "author": "ThemePixels",
   "devDependencies": {
