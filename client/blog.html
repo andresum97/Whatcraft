@@ -1,480 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>WhatCraft Shop - Blog</title>
-	<link rel="icon" href="img/Fevicon.png" type="image/png">
-  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
-	<link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
-	<link rel="stylesheet" href="vendors/linericon/style.css">
-  <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
-  <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WhatCraft Shop - Blog</title>
+    <link rel="icon" href="img/Fevicon.png" type="image/png">
+    <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="vendors/linericon/style.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
 
-  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
- 
-<!--================ Start Header Menu Area =================-->
-	<header class="header_area">
-    <div class="main_menu">
-      <nav class="navbar navbar-expand-lg navbar-light">
+
+    <!--================ Start Header Menu Area =================-->
+    <header class="header_area">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                            <li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Productos</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" style="font-size: 15px"
+                                            href="category.html">Categorías</a></li>
+                                    <li class="nav-item"><a class="nav-link" style="font-size: 15px"
+                                            href="single-product.html">Detalle de producto</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">¿Quiénes somos?</a></li>
+                        </ul>
+
+                        <ul class="nav-shop">
+                            <li class="nav-item"><button><i class="ti-search"></i></button></li>
+                            <li class="nav-item"><button><i class="ti-help"></i></button></li>
+                            <li class="nav-item"><button><i class="ti-shopping-cart"></i><span
+                                        class="nav-shop__circle">3</span></button> </li>
+                            <li class="nav-item"><a class="button button-header" href="category.html">Ver productos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--================ End Header Menu Area =================-->
+
+
+    <!--================Blog Categorie Area =================-->
+    <section class="blog_categorie_area">
         <div class="container">
-          <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-              <li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
-              <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Productos</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link"  style="font-size: 15px" href="category.html">Categorías</a></li>
-                  <li class="nav-item"><a class="nav-link"  style="font-size: 15px" href="single-product.html">Detalle de producto</a></li>
-                </ul>
-							</li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-              <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>  
-              <li class="nav-item"><a class="nav-link" href="contact.html">¿Quiénes somos?</a></li>
-            </ul>
-
-            <ul class="nav-shop">
-              <li class="nav-item"><button><i class="ti-search"></i></button></li>
-              <li class="nav-item"><button><i class="ti-help"></i></button></li>
-              <li class="nav-item"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button> </li>
-              <li class="nav-item"><a class="button button-header" href="category.html">Ver productos</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-<!--================ End Header Menu Area =================-->
-
-
-  <!--================Blog Categorie Area =================-->
-  <section class="blog_categorie_area">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="categories_post">
-                <img class="card-img rounded-0" src="img/blog/cat-post/cat-post-3.jpg" style="height: 218px" alt="post">
-                <div class="categories_details">
-                    <div class="categories_text">
-                        <a href="single-blog.html">
-                            <h5>Arte Guatemalteco</h5>
-                        </a>
-                        <div class="border_line"></div>
-                        <p>Lo más bello que describe la cultura guatemalteca</p>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="categories_post">
+                        <img class="card-img rounded-0" src="img/blog/cat-post/cat-post-3.jpg" style="height: 218px"
+                            alt="post">
+                        <div class="categories_details">
+                            <div class="categories_text">
+                                <a href="single-blog.html">
+                                    <h5>Arte Guatemalteco</h5>
+                                </a>
+                                <div class="border_line"></div>
+                                <p>Lo más bello que describe la cultura guatemalteca</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="categories_post">
+                        <img class="card-img rounded-0" src="img/blog/cat-post/cat-post-2.jpg" alt="post">
+                        <div class="categories_details">
+                            <div class="categories_text">
+                                <a href="single-blog.html">
+                                    <h5>Joyería guatemalteca</h5>
+                                </a>
+                                <div class="border_line"></div>
+                                <p>Desde lo más profundo de las ruinas mayas hasta tus manos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="categories_post">
+                        <img class="card-img rounded-0" src="img/blog/cat-post/cat-post-1.jpg" alt="post">
+                        <div class="categories_details">
+                            <div class="categories_text">
+                                <a href="single-blog.html">
+                                    <h5>Artesanías guatemaltecas</h5>
+                                </a>
+                                <div class="border_line"></div>
+                                <p>La más bella representación del arte y cultura Maya</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
-          <div class="categories_post">
-            <img class="card-img rounded-0" src="img/blog/cat-post/cat-post-2.jpg" alt="post">
-            <div class="categories_details">
-              <div class="categories_text">
-                <a href="single-blog.html">
-                    <h5>Joyería guatemalteca</h5>
-                </a>
-                <div class="border_line"></div>
-                <p>Desde lo más profundo de las ruinas mayas hasta tus manos</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="categories_post">
-                <img class="card-img rounded-0" src="img/blog/cat-post/cat-post-1.jpg" alt="post">
-                <div class="categories_details">
-                    <div class="categories_text">
-                        <a href="single-blog.html">
-                            <h5>Artesanías guatemaltecas</h5>
-                        </a>
-                        <div class="border_line"></div>
-                        <p>La más bella representación del arte y cultura Maya</p>
+    </section>
+    <!--================Blog Categorie Area =================-->
+
+    <!--================Blog Area =================-->
+    <section class="blog_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="blog_left_sidebar">
+                        <article class="row blog_item">
+                            <div class="col-md-3">
+                                <div class="blog_info text-right">
+                                    <div class="post_tag">
+                                        <a href="#">Arte,</a>
+                                        <a class="active" href="#">Artesanías</a>
+                                    </div>
+                                    <ul class="blog_meta list">
+                                        <li>
+                                            <a href="#">12-01-019
+                                                <i class="lnr lnr-calendar-full"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">04 Vistas
+                                                <i class="lnr lnr-eye"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">06 Comentarios
+                                                <i class="lnr lnr-bubble"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="blog_post">
+                                    <img src="img/blog/main-blog/m-blog-1.jpg" alt="">
+                                    <div class="blog_details">
+                                        <a href="single-blog.html">
+                                            <h2>Pintura Moderna en Guatemala</h2>
+                                        </a>
+                                        <p>A principios del siglo XX, Guatemala recibió el impuslso creativo
+                                            de artistas de la Generación del 40, cuya libertad de expresión
+                                            y visión facilitó el desarrollo del arte vanguardista actual.
+                                            De está época destacan,entre otros,
+                                            Roberto González Goyri, Roberto Ossaye y Juan Antonio Franco.</p>
+                                        <a class="button button-blog" href="single-blog.html">Ver Más</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="row blog_item">
+                            <div class="col-md-3">
+                                <div class="blog_info text-right">
+                                    <div class="post_tag">
+                                        <a class="active" href="#">Joyería</a>
+                                    </div>
+                                    <ul class="blog_meta list">
+                                        <li>
+                                            <a href="#">22-03-2019
+                                                <i class="lnr lnr-calendar-full"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">02 Vistas
+                                                <i class="lnr lnr-eye"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">01 Comentarios
+                                                <i class="lnr lnr-bubble"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="blog_post">
+                                    <img src="img/blog/main-blog/m-blog-2.jpg" alt="">
+                                    <div class="blog_details">
+                                        <a href="single-blog.html">
+                                            <h2>La impresionante joyería Maya</h2>
+                                        </a>
+                                        <p>La joyería maya, es una de las más impresionantes a lo largo de la historia.
+                                            Esta civilización, se estableció hace más de 4.500 años en Guatemala,
+                                            para luego llegar a México, Belice, Honduras y Salvador, donde dejaron
+                                            la herencia palpable de su extraordinaria joyería, siendo una manifestación
+                                            destacada de ese pueblo sorprendente.</p>
+                                        <a href="single-blog.html" class="button button-blog">Ver más</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="row blog_item">
+                            <div class="col-md-3">
+                                <div class="blog_info text-right">
+                                    <div class="post_tag">
+                                        <a class="active" href="#">Artesanías</a>
+                                    </div>
+                                    <ul class="blog_meta list">
+                                        <li>
+                                            <a href="#">27-03-2019
+                                                <i class="lnr lnr-calendar-full"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">04 Vistas
+                                                <i class="lnr lnr-eye"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">02 Comentarios
+                                                <i class="lnr lnr-bubble"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="blog_post">
+                                    <img src="img/blog/main-blog/m-blog-3.jpg" alt="">
+                                    <div class="blog_details">
+                                        <a href="single-blog.html">
+                                            <h2>Artesanías guatemaltecas</h2>
+                                        </a>
+                                        <p>La artesanía abarca toda aquella obra o trabajo realizado a mano,
+                                            con poca intervención de máquina. Generalmente son objetos decorativos
+                                            o de uso común, y todos los pueblos de distintos países lo realizan.
+                                            La artesanía de Guatemala es una de las expresiones más originales del país,
+                                            también representa un gran aporte para el sustento de la mayoría de las
+                                            comunidades del maravilloso país de Centro América. Se puede observar la
+                                            vocación que tienen, al ver la increíble combinación de colores en los
+                                            bordados.
+                                        </p>
+                                        <a href="single-blog.html" class="button button-blog">Ver más</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <nav class="blog-pagination justify-content-center d-flex">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Previous">
+                                        <span aria-hidden="true">
+                                            <span class="lnr lnr-chevron-left"></span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link">01</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="blog.html" class="page-link" aria-label="Next">
+                                        <span aria-hidden="true">
+                                            <span class="lnr lnr-chevron-right"></span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget search_widget">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Buscar">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="lnr lnr-magnifier"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                            <div class="br"></div>
+                        </aside>
+                        <aside class="single_sidebar_widget author_widget">
+                            <img class="author_img rounded-circle" src="img/blog/author.png" style="width: 120px"
+                                alt="">
+                            <h4>Ronald MacKay</h4>
+                            <p>Creador de albuen chapín</p>
+                            <div class="social_icon">
+                                <a href="https://www.facebook.com/ronald.mackay">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                            <p>Esta página es una maravilla, es increíble lo que pueden hacer tres patojos chispudos que
+                                están
+                                dispuestos a cambiar el futuro de su país. Los invito a compartir y comprar en esta
+                                página, conocerán
+                                grandes historias y tendrán un pedazo de nuestra Guatemala en sus casas.
+                            </p>
+                            <div class="br"></div>
+                        </aside>
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Los comentarios más buscados</h3>
+                            <div class="media post_item">
+                                <img src="img/blog/popular-post/post1.jpg" alt="post">
+                                <div class="media-body">
+                                    <a
+                                        href="https://www.guatemala.com/noticias/sociedad/national-geographic-descubrio-guatemala-ciudad-maya-la-cuernavilla.html">
+                                        <h3>La Cuernavilla</h3>
+                                    </a>
+                                    <p>02 horas atrás</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="img/blog/popular-post/post2.jpg" alt="post">
+                                <div class="media-body">
+                                    <a
+                                        href="https://www.guatemala.com/noticias/sociedad/tradiciones-guatemaltecas-promocionan-times-square-nueva-york.html">
+                                        <h3>Tradiciones guatemaltecas en NY</h3>
+                                    </a>
+                                    <p>04 horas atrás</p>
+                                </div>
+                            </div>
+                            <div class="br"></div>
+                        </aside>
+                        <aside class="single_sidebar_widget ads_widget">
+                            <a href="https://es.wikipedia.org/wiki/Lago_de_Atitl%C3%A1n">
+                                <img class="img-fluid"
+                                    src="http://www.fondosblackberry.com/user-content/uploads/wall/mid/34/Lago_y_Volcan_Atitlan_Solola_Guatemala.JPG"
+                                    alt="">
+                            </a>
+                            <div class="br"></div>
+                        </aside>
+                        <aside class="single_sidebar_widget post_category_widget">
+                            <h4 class="widget_title">Categorías</h4>
+                            <ul class="list cat-list">
+                                <li>
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <p>Arte</p>
+                                        <p>2</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <p>Joyería</p>
+                                        <p>3</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <p>Ropa</p>
+                                        <p>2</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <p>Artesanías</p>
+                                        <p>3</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="br"></div>
+                        </aside>
                     </div>
                 </div>
             </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!--================Blog Categorie Area =================-->
+    </section>
+    <!--================Blog Area =================-->
 
-  <!--================Blog Area =================-->
-  <section class="blog_area">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-8">
-                  <div class="blog_left_sidebar">
-                      <article class="row blog_item">
-                          <div class="col-md-3">
-                              <div class="blog_info text-right">
-                                  <div class="post_tag">
-                                      <a href="#">Arte,</a>
-                                      <a class="active" href="#">Artesanías</a>
-                                  </div>
-                                  <ul class="blog_meta list">
-                                      <li>
-                                          <a href="#">12-01-019
-                                              <i class="lnr lnr-calendar-full"></i>
-                                          </a>
-                                      </li>
-                                      <li>
-                                          <a href="#">04 Vistas
-                                              <i class="lnr lnr-eye"></i>
-                                          </a>
-                                      </li>
-                                      <li>
-                                          <a href="#">06 Comentarios
-                                              <i class="lnr lnr-bubble"></i>
-                                          </a>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                          <div class="col-md-9">
-                              <div class="blog_post">
-                                  <img src="img/blog/main-blog/m-blog-1.jpg" alt="">
-                                  <div class="blog_details">
-                                      <a href="single-blog.html">
-                                          <h2>Pintura Moderna en Guatemala</h2>
-                                      </a>
-                                      <p>A principios del siglo XX, Guatemala  recibió el impuslso creativo 
-                                          de artistas de la Generación del 40, cuya libertad de expresión 
-                                          y visión facilitó el desarrollo del arte vanguardista actual.
-                                          De está época destacan,entre otros, 
-                                          Roberto González Goyri, Roberto Ossaye y Juan Antonio Franco.</p>
-                                      <a class="button button-blog" href="single-blog.html">Ver Más</a>
-                                  </div>
-                              </div>
-                          </div>
-                      </article>
-                      <article class="row blog_item">
-                          <div class="col-md-3">
-                              <div class="blog_info text-right">
-                                  <div class="post_tag">
-                                      <a class="active" href="#">Joyería</a>
-                                  </div>
-                                  <ul class="blog_meta list">
-                                      <li>
-                                          <a href="#">22-03-2019
-                                              <i class="lnr lnr-calendar-full"></i>
-                                          </a>
-                                      </li>
-                                      <li>
-                                          <a href="#">02 Vistas
-                                              <i class="lnr lnr-eye"></i>
-                                          </a>
-                                      </li>
-                                      <li>
-                                          <a href="#">01 Comentarios
-                                              <i class="lnr lnr-bubble"></i>
-                                          </a>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                          <div class="col-md-9">
-                              <div class="blog_post">
-                                  <img src="img/blog/main-blog/m-blog-2.jpg" alt="">
-                                  <div class="blog_details">
-                                      <a href="single-blog.html">
-                                          <h2>La impresionante joyería Maya</h2>
-                                      </a>
-                                      <p>La joyería maya, es una de las más impresionantes a lo largo de la historia. 
-                                          Esta  civilización, se estableció hace más de 4.500 años en Guatemala, 
-                                          para luego llegar a México, Belice, Honduras y Salvador, donde dejaron 
-                                          la herencia palpable de su extraordinaria joyería, siendo una manifestación 
-                                          destacada de ese pueblo sorprendente.</p>
-                                      <a href="single-blog.html" class="button button-blog">Ver más</a>
-                                  </div>
-                              </div>
-                          </div>
-                      </article>
-                       <article class="row blog_item">
-                          <div class="col-md-3">
-                              <div class="blog_info text-right">
-                                  <div class="post_tag">
-                                      <a class="active" href="#">Artesanías</a>
-                                  </div>
-                                  <ul class="blog_meta list">
-                                      <li>
-                                          <a href="#">27-03-2019
-                                              <i class="lnr lnr-calendar-full"></i>
-                                          </a>
-                                      </li>
-                                      <li>
-                                          <a href="#">04 Vistas
-                                              <i class="lnr lnr-eye"></i>
-                                          </a>
-                                      </li>
-                                      <li>
-                                          <a href="#">02 Comentarios
-                                              <i class="lnr lnr-bubble"></i>
-                                          </a>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                          <div class="col-md-9">
-                              <div class="blog_post">
-                                  <img src="img/blog/main-blog/m-blog-3.jpg" alt="">
-                                  <div class="blog_details">
-                                      <a href="single-blog.html">
-                                          <h2>Artesanías guatemaltecas</h2>
-                                      </a>
-                                      <p>La artesanía abarca toda aquella obra o trabajo realizado a mano, 
-                                          con poca intervención de máquina. Generalmente son objetos decorativos 
-                                          o de uso común, y todos los pueblos de distintos países lo realizan.
-                                          La artesanía de Guatemala es una de las expresiones más originales del país, 
-                                          también representa un gran aporte para el sustento de la mayoría de las 
-                                          comunidades del maravilloso país de Centro América. Se puede observar la 
-                                          vocación que tienen, al ver la increíble combinación de colores en los bordados.
-                                      </p>
-                                      <a href="single-blog.html" class="button button-blog">Ver más</a>
-                                  </div>
-                              </div>
-                          </div>
-                      </article>
-                      <nav class="blog-pagination justify-content-center d-flex">
-                          <ul class="pagination">
-                              <li class="page-item">
-                                  <a href="#" class="page-link" aria-label="Previous">
-                                      <span aria-hidden="true">
-                                          <span class="lnr lnr-chevron-left"></span>
-                                      </span>
-                                  </a>
-                              </li>
-                              <li class="page-item">
-                                  <a href="#" class="page-link">01</a>
-                              </li>
-                              <li class="page-item">
-                                  <a href="blog.html" class="page-link" aria-label="Next">
-                                      <span aria-hidden="true">
-                                          <span class="lnr lnr-chevron-right"></span>
-                                      </span>
-                                  </a>
-                              </li>
-                          </ul>
-                      </nav>
-                  </div>
-              </div>
-              <div class="col-lg-4">
-                  <div class="blog_right_sidebar">
-                      <aside class="single_sidebar_widget search_widget">
-                          <div class="input-group">
-                              <input type="text" class="form-control" placeholder="Buscar">
-                              <span class="input-group-btn">
-                                  <button class="btn btn-default" type="button">
-                                      <i class="lnr lnr-magnifier"></i>
-                                  </button>
-                              </span>
-                          </div>
-                          <!-- /input-group -->
-                          <div class="br"></div>
-                      </aside>
-                      <aside class="single_sidebar_widget author_widget">
-                          <img class="author_img rounded-circle" src="img/blog/author.png" style="width: 120px" alt="">
-                          <h4>Ronald MacKay</h4>
-                          <p>Creador de albuen chapín</p>
-                          <div class="social_icon">
-                              <a href="https://www.facebook.com/ronald.mackay">
-                                  <i class="fab fa-facebook-f"></i>
-                              </a>
-                          </div>
-                          <p>Esta página es una maravilla, es increíble lo que pueden hacer tres patojos chispudos que están 
-                              dispuestos a cambiar el futuro de su país. Los invito a compartir y comprar en esta página, conocerán 
-                              grandes historias y tendrán un pedazo de nuestra Guatemala en sus casas. 
-                          </p>
-                          <div class="br"></div>
-                      </aside>
-                      <aside class="single_sidebar_widget popular_post_widget">
-                          <h3 class="widget_title">Los comentarios más buscados</h3>
-                          <div class="media post_item">
-                              <img src="img/blog/popular-post/post1.jpg" alt="post">
-                              <div class="media-body">
-                                  <a href="https://www.guatemala.com/noticias/sociedad/national-geographic-descubrio-guatemala-ciudad-maya-la-cuernavilla.html">
-                                      <h3>La Cuernavilla</h3>
-                                  </a>
-                                  <p>02 horas atrás</p>
-                              </div>
-                          </div>
-                          <div class="media post_item">
-                              <img src="img/blog/popular-post/post2.jpg" alt="post">
-                              <div class="media-body">
-                                  <a href="https://www.guatemala.com/noticias/sociedad/tradiciones-guatemaltecas-promocionan-times-square-nueva-york.html">
-                                      <h3>Tradiciones guatemaltecas en NY</h3>
-                                  </a>
-                                  <p>04 horas atrás</p>
-                              </div>
-                          </div>
-                          <div class="br"></div>
-                      </aside>
-                      <aside class="single_sidebar_widget ads_widget">
-                          <a href="https://es.wikipedia.org/wiki/Lago_de_Atitl%C3%A1n">
-                              <img class="img-fluid" src="http://www.fondosblackberry.com/user-content/uploads/wall/mid/34/Lago_y_Volcan_Atitlan_Solola_Guatemala.JPG" alt="">
-                          </a>
-                          <div class="br"></div>
-                      </aside>
-                      <aside class="single_sidebar_widget post_category_widget">
-                          <h4 class="widget_title">Categorías</h4>
-                          <ul class="list cat-list">
-                              <li>
-                                  <a href="#" class="d-flex justify-content-between">
-                                      <p>Arte</p>
-                                      <p>2</p>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="#" class="d-flex justify-content-between">
-                                      <p>Joyería</p>
-                                      <p>3</p>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="#" class="d-flex justify-content-between">
-                                      <p>Ropa</p>
-                                      <p>2</p>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="#" class="d-flex justify-content-between">
-                                      <p>Artesanías</p>
-                                      <p>3</p>
-                                  </a>
-                              </li>
-                          </ul>
-                          <div class="br"></div>
-                      </aside>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-  <!--================Blog Area =================-->
+    <!--================Instagram Area =================-->
+    <section class="instagram_area">
+        <div class="container box_1620">
+            <div class="instagram_image row m0">
+                <a href="#"><img src="img/instagram/ins-1.jpg" style="height: 240px;" alt=""></a>
+                <a href="#"><img src="img/instagram/ins-2.jpg" style="height: 240px;" alt=""></a>
+                <a href="#"><img src="img/instagram/ins-3.jpg" style="height: 240px;" alt=""></a>
+                <a href="#"><img src="img/instagram/ins-4.jpg" style="height: 240px;" alt=""></a>
+                <a href="#"><img src="img/instagram/ins-5.jpg" style="height: 240px;" alt=""></a>
+                <a href="#"><img src="img/instagram/ins-6.jpg" style="height: 240px;" alt=""></a>
+            </div>
+        </div>
+    </section>
+    <!--================End Instagram Area =================-->
 
-  <!--================Instagram Area =================-->
-  <section class="instagram_area">
-    <div class="container box_1620">
-      <div class="instagram_image row m0">
-        <a href="#"><img src="img/instagram/ins-1.jpg" style="height: 240px;" alt=""></a>
-        <a href="#"><img src="img/instagram/ins-2.jpg" style="height: 240px;" alt=""></a>
-        <a href="#"><img src="img/instagram/ins-3.jpg" style="height: 240px;" alt=""></a>
-        <a href="#"><img src="img/instagram/ins-4.jpg" style="height: 240px;" alt=""></a>
-        <a href="#"><img src="img/instagram/ins-5.jpg" style="height: 240px;" alt=""></a>
-        <a href="#"><img src="img/instagram/ins-6.jpg" style="height: 240px;" alt=""></a>
-      </div>
-    </div>
-  </section>
-  <!--================End Instagram Area =================-->
-  
-  <!--================ Start footer Area  =================-->	
-	<footer>
-		<div class="footer-area">
-			<div class="container">
-				<div class="row section_gap">
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title large_title">Nuestra Misión</h4>
-							<p>
-                                Somos tres jóvenes guatemaltecos que buscan apoyar 
+    <!--================ Start footer Area  =================-->
+    <footer>
+        <div class="footer-area">
+            <div class="container">
+                <div class="row section_gap">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                            <h4 class="footer_title large_title">Nuestra Misión</h4>
+                            <p>
+                                Somos tres jóvenes guatemaltecos que buscan apoyar
                                 en el progreso económico de nuestro país, Guatemala.
-							</p>
-							<p>
-                                Nuestra misión es dar a conocer artistas nacionales provenientes de áreas 
-                                poco accesibles por los turistas. Mejorar la calidad de vida de dichos 
+                            </p>
+                            <p>
+                                Nuestra misión es dar a conocer artistas nacionales provenientes de áreas
+                                poco accesibles por los turistas. Mejorar la calidad de vida de dichos
                                 artistas al proporcionar un canal internacional de distribución de sus
-                                productos.  
-							</p>
-						</div>
-					</div>
-					<div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title">Acceso rápido</h4>
-							<ul class="list">
-								<li><a href="index.html">Inicio</a></li>
-								<li><a href="category.html">Categorías</a></li>
+                                productos.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                            <h4 class="footer_title">Acceso Rápido</h4>
+                            <ul class="list">
+                                <li><a href="index.html">Inicio</a></li>
+                                <li><a href="category.html">Categorías</a></li>
                                 <li><a href="single-product.html">Productos</a></li>
                                 <li><a href="blog.html">Blog</a></li>
-								<li><a href="contact.html">Contáctanos</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-6 col-sm-6">
-						<div class="single-footer-widget instafeed">
-							<h4 class="footer_title">Galería</h4>
-							<ul class="list instafeed d-flex flex-wrap">
-								<li><img src="img/gallery/r1.jpg" style="height: 85px; width: 110px"></li>
-								<li><img src="img/gallery/r2.jpg" style="height: 85px; width: 110px"></li>
-								<li><img src="img/gallery/r3.jpg" style="height: 85px; width: 110px"></li>
-							</ul>
-						</div>
-					</div>
-					<div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title">Contáctanos</h4>
-							<div class="ml-40">
-								<p class="sm-head">
-									<span class="fa fa-location-arrow"></span>
-									Oficina central
-								</p>
-								<p>18 Avenida 11-95, Guatemala</p>
-	
-								<p class="sm-head">
-									<span class="fa fa-phone"></span>
-									Teléfono de contacto
-								</p>
-								<p>
-									+502 4300 0805<br>
+                                <li><a href="contact.html">Contáctanos</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="single-footer-widget instafeed">
+                            <h4 class="footer_title">Galería</h4>
+                            <ul class="list instafeed d-flex flex-wrap">
+                                <li><img src="img/gallery/r1.jpg" style="height: 85px; width: 110px"></li>
+                                <li><img src="img/gallery/r2.jpg" style="height: 85px; width: 110px"></li>
+                                <li><img src="img/gallery/r3.jpg" style="height: 85px; width: 110px"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                            <h4 class="footer_title">Contáctanos</h4>
+                            <div class="ml-40">
+                                <p class="sm-head">
+                                    <span class="fa fa-location-arrow"></span>
+                                    Oficina central
+                                </p>
+                                <p>18 Avenida 11-95, Guatemala</p>
+
+                                <p class="sm-head">
+                                    <span class="fa fa-phone"></span>
+                                    Teléfono de contacto
+                                </p>
+                                <p>
+                                    +502 4300 0805<br>
                                     +502 4762 2485<br>
                                     +502 3524 1536
-								</p>
-	
-								<p class="sm-head">
-									<span class="fa fa-envelope"></span>
-									Correo Electrónico
-								</p>
-								<p>
-									info@wcgt.com
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                                </p>
 
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="row d-flex">
-					<p class="col-lg-12 footer-text text-center">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos son reservados <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.uvg.edu.gt/" target="_blank">Universidad del Valle de Guatemala</a>
+                                <p class="sm-head">
+                                    <span class="fa fa-envelope"></span>
+                                    Correo Electrónico
+                                </p>
+                                <p>
+                                    info@wcgt.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row d-flex">
+                    <p class="col-lg-12 footer-text text-center">
+                        Copyright &copy;<script>
+                            document.write(new Date().getFullYear());
+                        </script> Todos los derechos son reservados <i class="fa fa-heart" aria-hidden="true"></i> by <a
+                            href="https://www.uvg.edu.gt/" target="_blank">Universidad del Valle de Guatemala</a>
                     </p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!--================ End footer Area  =================-->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--================ End footer Area  =================-->
 
 
 
-  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
-  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
-  <script src="vendors/skrollr.min.js"></script>
-  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-  <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
-  <script src="vendors/jquery.ajaxchimp.min.js"></script>
-  <script src="vendors/mail-script.js"></script>
-  <script src="js/main.js"></script>
+    <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="vendors/skrollr.min.js"></script>
+    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="vendors/jquery.ajaxchimp.min.js"></script>
+    <script src="vendors/mail-script.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
