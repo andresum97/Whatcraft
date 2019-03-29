@@ -64,8 +64,8 @@
           
         <div class="signup-separator"><span> </span></div>
 
-        <button class="btn btn-primary btn-block btn-signin">Registrarse</button>
-
+        
+        <button onClick="registrar()" class="btn btn-primary btn-block btn-signin">Registrarse</button>
         <div class="signup-separator"><span>o registrate usando</span></div>
 
         <button class="btn btn-facebook btn-block">Registrarse usando Facebook</button>
@@ -81,6 +81,18 @@
     <script src="../lib/bootstrap/js/bootstrap.js"></script>
 
     <script src="../js/slim.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBpdjvASysBzQSAXnSeM-CbxzO5whifi48",
+        authDomain: "whatcraft-c9fad.firebaseapp.com",
+        databaseURL: "https://whatcraft-c9fad.firebaseio.com",
+        projectId: "whatcraft-c9fad",
+        storageBucket: "whatcraft-c9fad.appspot.com",
+        messagingSenderId: "276386671353"
+      };
+      firebase.initializeApp(config);
+    </script>
 
   </body>
 </html>
