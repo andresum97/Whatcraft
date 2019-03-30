@@ -6,7 +6,7 @@ $(document).ready(function(){
     
     jQuery.validator.addMethod('answercheck', function (value, element) {
         return this.optional(element) || /^\bcat\b$/.test(value)
-    }, "type the correct answer -_-");
+    }, "Envía una respuesta correcta");
 
     // validate contactForm form
     $(function() {
@@ -22,7 +22,7 @@ $(document).ready(function(){
                 },
                 number: {
                     required: true,
-                    minlength: 5
+                    minlength: 8
                 },
                 email: {
                     required: true,
@@ -35,23 +35,23 @@ $(document).ready(function(){
             },
             messages: {
                 name: {
-                    required: "come on, you have a name, don't you?",
-                    minlength: "your name must consist of at least 2 characters"
+                    required: "Nombre es un campo requerido",
+                    minlength: "Tu nombre debe ser consistente o al menos 2 caracteres"
                 },
                 subject: {
-                    required: "come on, you have a subject, don't you?",
-                    minlength: "your subject must consist of at least 4 characters"
+                    required: "Asunto es un campo requerido",
+                    minlength: "Tu Asunto debe ser consistente o al menos 4 caracteres."
                 },
                 number: {
-                    required: "come on, you have a number, don't you?",
-                    minlength: "your Number must consist of at least 5 characters"
+                    required: "Número es un campo requerido",
+                    minlength: "Su número debe ser consistente o al menos 8 caracteres"
                 },
                 email: {
-                    required: "no email, no message"
+                    required: "Correo electrónico es un campo requerido"
                 },
                 message: {
-                    required: "um...yea, you have to write something to send this form.",
-                    minlength: "thats all? really?"
+                    required: "Mensaje es un campo requerido",
+                    minlength: "Debes de enviar más información un mínimo de 20 palabras"
                 }
             },
             submitHandler: function(form) {
