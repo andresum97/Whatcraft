@@ -68,7 +68,8 @@ function observador(){
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      aparece(user);
+      //aparece(user);
+      cambiarLog(user);
       console.log("existe usuario activo");
       var displayName = user.displayName;
       var email = user.email;
@@ -91,22 +92,24 @@ function observador(){
 observador();
 function aparece(user){
   var user = user;
-  var contenido = document.getElementById('contenido');
-  if(user.emailVerified){
+  //var contenido = document.getElementById('contenido');
+  /*if(user.emailVerified){
     contenido.innerHTML = `
     <p> Bienvenido </p>
     <button onClick='cerrar()'> cerrar sesion</button>  
     `;
-  }
+  }*/
 }
 function cerrar(){
   firebase.auth().signOut()
   .then(function(){
       console.log('Saliendo...')
+      document.location.href = 'login.html?#/';
   })
   .catch(function(error){
     console.log(error)
   })
+
 }
 
 function verificar(){
@@ -121,3 +124,16 @@ function verificar(){
   });
 
 }
+
+function cambiarLog(user) {
+  var user =user;
+  var loginBTN = document.getElementById('login');
+
+  if (loginBTN.innerHTML == 'Inicia Sesion'){
+    loginBTN.innerHTML = 'Cerrar Sesion';
+  }else {
+    loginBTN.innerHTML = 'Inicia Sesion';
+  }
+
+}
+
