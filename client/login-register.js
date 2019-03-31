@@ -2,8 +2,11 @@ function registrar(){
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
   var confirmPassword = document.getElementById('confirmPassword').value;
-  console.log(password);
-  console.log(confirmPassword);
+  var alerta = document.getElementById('alerta');
+  
+
+
+
   if(password == confirmPassword){
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function(){
@@ -19,17 +22,42 @@ function registrar(){
       var errorCode = error.code;
       var errorMessage = error.message;
       if (errorCode == "auth/weak-password") {
-        window.alert("Ingrese una contraseña de más de 6 caracteres");
+        alerta.innerHTML = `
+        <div class="mt-3"></div>
+        <div class="alert alert-danger" role="alert">
+        Ingrese una contraseña de más de 6 caracteres por favor. 
+        </div>
+        `;
       }
       if (errorCode == "auth/email-already-in-use") {
-        window.alert("Este correo ya fue vinculado auna cuenta");
+        alerta.innerHTML = `
+        <div class="mt-3"></div>
+        <div class="alert alert-danger" role="alert">
+        Este correo ya fue vinculado a una cuenta.
+        </div>
+        `;
+      }
+      if (errorCode == "auth/invalid-email") {
+        
+        alerta.innerHTML = `
+        <div class="mt-3"></div>
+        <div class="alert alert-danger" role="alert">
+        Este correo no es válido, recuerde que debe llevar una @
+        </div>
+        `;
       }
       console.log(errorCode);
       console.log(errorMessage);
       // ...
     });
   } else{
-    window.alert("Las contraseña no es igual");
+    
+    alerta.innerHTML = `
+        <div class="mt-3"></div>
+        <div class="alert alert-danger" role="alert">
+        Las contraseñas no coinciden, Por favor reingreselas.
+        </div>
+        `;
   }
   
   
@@ -39,29 +67,59 @@ function ingresar(){
 
   var emailL = document.getElementById('emailL').value;
   var passwordL = document.getElementById('passwordL').value;
-
-
-  firebase.auth().signInWithEmailAndPassword(emailL, passwordL)
-  .then(function(){
-    document.location.href = 'index.html';
-  })
-
+  var alertaL = document.getElementById('alertaL');
+//PONER ESTA OPCION PARA CUANDO QUIERA COMPRAR O METERSE AL CARRITO
+  /*firebase.auth().onAuthStateChanged(function(user) {
+    if(user.emailVerified){*/
+      firebase.auth().signInWithEmailAndPassword(emailL, passwordL)
+      .then(function(){
+    
+        document.location.href = 'index.html';
+        
+      })
+    
+      
+      .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode == "auth/invalid-email") {
+          alertaL.innerHTML = `
+          <div class="mt-3"></div>
+          <div class="alert alert-danger" role="alert">
+          Ingrese un usuario valido
+          </div>
+        `;
+      }
+        if (errorCode == "auth/user-not-found") {
+            alertaL.innerHTML = `
+            <div class="mt-3"></div>
+            <div class="alert alert-danger" role="alert">
+            Usuario no encontrado
+            </div>
+          `;
+        }
+        if (errorCode == "auth/wrong-password") {
+            alertaL.innerHTML = `
+            <div class="mt-3"></div>
+            <div class="alert alert-danger" role="alert">
+            Contrasena incorrecta
+            </div>
+            `;
+        }
+        
+        // ...
+      });
   
-  .catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    if (errorCode == "auth/invalid-email") {
-      window.alert("Ingrese un usuario valido");
-  }
-    if (errorCode == "auth/user-not-found") {
-        window.alert("Usuario no encontrado");
+    /*}else{
+      alertaL.innerHTML = `
+            <div class="mt-3"></div>
+            <div class="alert alert-danger" role="alert">
+            Tu cuenta no está verificada por favor ve a tu correo y hazlo
+            </div>
+            `;
     }
-    if (errorCode == "auth/wrong-password") {
-        window.alert("Contrasena incorrecta");
-    }
-    // ...
-  });
+  });*/
 }
 
 function observador(){
@@ -70,13 +128,10 @@ function observador(){
       // User is signed in.
       //aparece(user);
       cambiarLog(user);
-      console.log("existe usuario activo");
+      console.log("El usuario está logeado");
       var displayName = user.displayName;
       var email = user.email;
       var emailVerified = user.emailVerified;
-      console.log('*****************************');
-      console.log(user.emailVerified);
-      console.log('*****************************');
       var photoURL = user.photoURL;
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
@@ -85,7 +140,7 @@ function observador(){
     } else {
       // User is signed out.
       // ...
-      console.log("no existe usuario activo");
+      console.log("El usuario no está logeado");
     }
   });
 }
@@ -114,10 +169,18 @@ function cerrar(){
 
 function verificar(){
   var user = firebase.auth().currentUser;
+  var alerta = document.getElementById('alerta');
 
   user.sendEmailVerification().then(function() {
     // Email sent.
-    window.alert("Verifica tu cuenta en tu correo electrónico");
+    
+    alerta.innerHTML = `
+      <div class="mt-3"></div>
+      <div class="alert alert-success" role="alert">
+      Gracias! Verifica tu cuenta en tu correo electrónico.
+      </div>
+    `;
+      
   }).catch(function(error) {
     // An error happened.
     console.log(error);
@@ -135,5 +198,20 @@ function cambiarLog(user) {
     loginBTN.innerHTML = 'Inicia Sesion';
   }
 
+}
+function cambioPass(){
+  var emailP = document.getElementById('emailP').value;
+  //emailAddress = String(emailAddress);
+
+  var auth = firebase.auth();
+ 
+
+  auth.sendPasswordResetEmail(emailP).then(function() {
+    // Email sent.
+    console.log('correo enviado')
+  }).catch(function(error) {
+    // An error happened.
+    console.log(error);
+  });
 }
 
