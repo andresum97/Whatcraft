@@ -15,6 +15,19 @@
   <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBpdjvASysBzQSAXnSeM-CbxzO5whifi48",
+      authDomain: "whatcraft-c9fad.firebaseapp.com",
+      databaseURL: "https://whatcraft-c9fad.firebaseio.com",
+      projectId: "whatcraft-c9fad",
+      storageBucket: "whatcraft-c9fad.appspot.com",
+      messagingSenderId: "276386671353"
+    };
+    firebase.initializeApp(config);
+</script>
 </head>
 
 <body>
@@ -52,12 +65,15 @@
               <li class="nav-item"><button><i class="ti-search"></i></button></li>
               <li class="nav-item"><button><i class="ti-help"></i></button></li>
               <li class="nav-item"><button><i class="ti-shopping-cart"></i><span
-                    class="nav-shop__circle">3</span></button> </li>
-              <li class="nav-item"><a class="button button-header" href="#">Comprar ahora</a></li>
+                    class="nav-shop__circle">0</span></button> </li>
+              <li class="nav-item"><a class="button button-header" href="#">Comprar</a></li>
+              <li class="nav-item"><button id='login' onClick="cerrar()" class="btn btn-outline-success my-2 my-sm-0" >Inicia Sesion</button></li>
             </ul>
           </div>
-        </div>
-      </nav>
+          </div>
+    
+          <!---<button id='login' onClick="cerrar()" class="button button-header">Inicia Sesion</button>-->
+        </nav>
     </div>
   </header>
   <!--================ End Header Menu Area =================-->
@@ -608,6 +624,7 @@
   <script src="vendors/jquery.ajaxchimp.min.js"></script>
   <script src="vendors/mail-script.js"></script>
   <script src="js/main.js"></script>
+  <script src="login-register.js"></script>
 </body>
 
 </html>

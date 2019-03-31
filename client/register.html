@@ -17,6 +17,20 @@
 	<link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
 
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBpdjvASysBzQSAXnSeM-CbxzO5whifi48",
+        authDomain: "whatcraft-c9fad.firebaseapp.com",
+        databaseURL: "https://whatcraft-c9fad.firebaseio.com",
+        projectId: "whatcraft-c9fad",
+        storageBucket: "whatcraft-c9fad.appspot.com",
+        messagingSenderId: "276386671353"
+      };
+      firebase.initializeApp(config);
+	</script>
+		
 </head>
 
 <body>
@@ -75,7 +89,7 @@
 						<div class="hover">
 							<h4>Ya tienes una cuenta?</h4>
 							<p>Esta es una página en donde podrás adquirir cualquier arte 100% guatemalteco</p>
-							<a class="button button-account" href="login.html">Ingresa sesión ahora</a>
+							<a class="button button-account" href="login.html?#/">Ingresa sesión ahora</a>
 						</div>
 					</div>
 				</div>
@@ -84,19 +98,19 @@
 						<h3>Crear una cuenta</h3>
 						<form class="row login_form" action="#/" id="register_form">
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Nombre de Usuario"
+								<input id="name" type="text" class="form-control"  placeholder="Nombre de Usuario"
 									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre de usuario'">
 							</div>
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="email" name="email" placeholder="Correo electrónico"
+								<input id="email" type="email" class="form-control"   placeholder="Correo electrónico"
 									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Correo electrónico'">
 							</div>
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="password" name="password" placeholder="Contraseña"
+								<input id="password" type="password" class="form-control"  placeholder="Contraseña"
 									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Contraseña'">
 							</div>
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="confirmPassword" name="confirmPassword"
+								<input id="confirmPassword" type="password" class="form-control" 
 									placeholder="Confirmar contraseña" onfocus="this.placeholder = ''"
 									onblur="this.placeholder = 'Confirmar contraseña'">
 							</div>
@@ -105,7 +119,10 @@
 								</div>
 							</div>
 							<div class="col-md-12 form-group">
-								<button type="submit" value="submit" class="button button-register w-100">Registrarme</button>
+								<button onClick="registrar()" class="btn btn-success btn-block">Registrar</button>
+								<div id='alerta'> 
+									
+								</div>
 							</div>
 						</form>
 					</div>
@@ -207,15 +224,19 @@
 	<!--================ End footer Area  =================-->
 
 
-
-	<script src="vendors/jquery/jquery-3.2.1.min.js"></script>
-	<script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
-	<script src="vendors/skrollr.min.js"></script>
-	<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-	<script src="vendors/nice-select/jquery.nice-select.min.js"></script>
-	<script src="vendors/jquery.ajaxchimp.min.js"></script>
-	<script src="vendors/mail-script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>	
+  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendors/skrollr.min.js"></script>
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="vendors/jquery.ajaxchimp.min.js"></script>
+  <script src="vendors/mail-script.js"></script>
 	<script src="js/main.js"></script>
+	<script src="login-register.js"></script>
+	
 </body>
 
 </html>
