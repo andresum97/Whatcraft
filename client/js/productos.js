@@ -33,47 +33,122 @@ var rootRef = firebase.database().ref().child("pintura");
 // alert('obra2'+valorid);
 
 // });
-alert(obraarte);
-var obra = firebase.database().ref('pintura'+obraarte+'/nombre');
-obra.once('value',function(snapshot){
-    nombre.innerText = snapshot.val();
-});
+
+// var obra = firebase.database().ref('pintura'+obraarte+'/nombre');
+// obra.once('value',function(snapshot){
+//     nombre.innerText = snapshot.val();
+// });
 
 
-var obra = firebase.database().ref('pintura'+obraarte+'/precio');
-obra.once('value',function(snapshot){
-    precio.innerText = 'Q'+snapshot.val()+'.00';
-});
+// var obra = firebase.database().ref('pintura'+obraarte+'/precio');
+// obra.once('value',function(snapshot){
+//     precio.innerText = 'Q'+snapshot.val()+'.00';
+// });
 
-var obra = firebase.database().ref('pintura'+obraarte+'/artista');
-obra.once('value',function(snapshot){
-    artista.innerText = 'Artista: '+snapshot.val();
-});
+// var obra = firebase.database().ref('pintura'+obraarte+'/artista');
+// obra.once('value',function(snapshot){
+//     artista.innerText = 'Artista: '+snapshot.val();
+// });
 
-var obra = firebase.database().ref('pintura'+obraarte+'/URL');
-obra.once('value',function(snapshot){
-    imagen.src = snapshot.val();
-});
+// var obra = firebase.database().ref('pintura'+obraarte+'/URL');
+// obra.once('value',function(snapshot){
+//     imagen.src = snapshot.val();
+// });
 
-var obra = firebase.database().ref('pintura'+obraarte+'/descripcion');
-obra.once('value',function(snapshot){
-    descripcion.innerText = snapshot.val();
-});
+// var obra = firebase.database().ref('pintura'+obraarte+'/descripcion');
+// obra.once('value',function(snapshot){
+//     descripcion.innerText = snapshot.val();
+// });
 
-var obra = firebase.database().ref('pintura'+obraarte+'/largo');
-obra.once('value',function(snapshot){
-    largo.innerText = snapshot.val()+' cm';
-});
+// var obra = firebase.database().ref('pintura'+obraarte+'/largo');
+// obra.once('value',function(snapshot){
+//     largo.innerText = snapshot.val()+' cm';
+// });
 
-var obra = firebase.database().ref('pintura'+obraarte+'/peso');
-obra.once('value',function(snapshot){
-    peso.innerText = snapshot.val()+' gr';
-});
+// var obra = firebase.database().ref('pintura'+obraarte+'/peso');
+// obra.once('value',function(snapshot){
+//     peso.innerText = snapshot.val()+' gr';
+// });
 
-var obra = firebase.database().ref('pintura'+obraarte+'/ancho');
-obra.once('value',function(snapshot){
-    ancho.innerText = snapshot.val()+' cm';
-});
+// var obra = firebase.database().ref('pintura'+obraarte+'/ancho');
+// obra.once('value',function(snapshot){
+//     ancho.innerText = snapshot.val()+' cm';
+// });
+
+
+function obtenerID(){
+    var refid = firebase.database().ref('id/valor');
+    refid.on('value',function(snapshot){
+        id = '/'+snapshot.val();
+        var obra = firebase.database().ref('pintura'+id+'/nombre');
+        obra.once('value',function(snapshot){
+            nombre.innerText = snapshot.val();
+        });
+
+
+        var obra = firebase.database().ref('pintura'+id+'/precio');
+        obra.once('value',function(snapshot){
+            precio.innerText = 'Q'+snapshot.val()+'.00';
+        });
+
+        var obra = firebase.database().ref('pintura'+id+'/artista');
+        obra.once('value',function(snapshot){
+            artista.innerText = 'Artista: '+snapshot.val();
+        });
+
+        var obra = firebase.database().ref('pintura'+id+'/URL');
+        obra.once('value',function(snapshot){
+            imagen.src = snapshot.val();
+        });
+
+        var obra = firebase.database().ref('pintura'+id+'/descripcion');
+        obra.once('value',function(snapshot){
+            descripcion.innerText = snapshot.val();
+        });
+
+        var obra = firebase.database().ref('pintura'+id+'/largo');
+        obra.once('value',function(snapshot){
+            largo.innerText = snapshot.val()+' cm';
+        });
+
+        var obra = firebase.database().ref('pintura'+id+'/peso');
+        obra.once('value',function(snapshot){
+            peso.innerText = snapshot.val()+' gr';
+        });
+
+        var obra = firebase.database().ref('pintura'+id+'/ancho');
+        obra.once('value',function(snapshot){
+            ancho.innerText = snapshot.val()+' cm';
+        });
+    });
+}
+
+function asignarID(id){
+    var firebaseRef = firebase.database().ref();
+    firebaseRef.child("id").update({
+        "valor": id
+    });
+}
+
+function asignarIDcarrito(id){
+    asignarID(id);
+    var refid = firebase.database().ref('id/valor');
+    refid.on('value',function(snapshot){
+        valor = snapshot.val();
+        agregarcarrito(valor);
+    });
+
+}
+
+function carrito2(){
+    var refid = firebase.database().ref('id/valor');
+    refid.on('value',function(snapshot){
+        valor = snapshot.val();
+        // alert(valor);
+        agregarcarrito(valor);
+    });
+}
+
 
 function HTMLmostrarproductos(id,name,price,cat,img){
     return `<div class="col-md-6 col-lg-4">
@@ -82,12 +157,12 @@ function HTMLmostrarproductos(id,name,price,cat,img){
         <img class="card-img" style="height: 270px;width: 263px;" src="${img}" alt="">
         <ul class="card-product__imgOverlay">
           <li><button><i class="ti-search"></i></button></li>
-          <li><button><i class="ti-shopping-cart"></i></button></li>
+          <li><button onclick="asignarIDcarrito('${id}');"><i class="ti-shopping-cart"></i></button></li>
         </ul>
       </div>
       <div class="card-body">
         <p>${cat}</p>
-        <h4 class="card-product__title" onclick="obtenerid(${id});"><a href="single-product.html">${name}</a></h4>
+        <h4 class="card-product__title" onclick="asignarID('${id}');"><a href="single-product.html">${name}</a></h4>
         <p class="card-product__price">Q${price}</p>
       </div>
     </div>
