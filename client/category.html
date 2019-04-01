@@ -68,9 +68,9 @@
             </ul>
 
             <ul class="nav-shop">
-              <li class="nav-item"><button><i class="ti-search"></i></button></li>
-              <li class="nav-item"><button><i class="ti-help"></i></button></li>
-              <li class="nav-item"><button><i class="ti-shopping-cart"></i><span
+              <li class="nav-item"><button><i href="search.html" class="ti-search"></i></button></li>
+              <li class="nav-item"><button><i href="help.html" class="ti-help"></i></button></li>
+              <li class="nav-item"><button><i href="cart.html" class="ti-shopping-cart"></i><span
                     class="nav-shop__circle">3</span></button> </li>
 
               <li class="nav-item"><a class="button button-header" href="cart.html">Ir a carrito</a></li>
@@ -89,23 +89,17 @@
       <div class="row">
         <div class="col-xl-3 col-lg-4 col-md-5">
           <div class="sidebar-categories">
-            <div class="head">Explorar categorías</div>
+            <div class="head">Nuestras Categorías</div>
             <ul class="main-categories">
               <li class="common-filter">
                 <form action="#">
                   <ul>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="arte" name="brand"><label
-                        for="arte">Arte<span> (8)</span></label></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="joyas" name="brand"><label
-                        for="joyas">Joyería<span> (10)</span></label></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="artesanias" name="brand"><label
-                        for="artesanias">Artesanías<span> (3)</span></label></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="ropa" name="brand"><label
-                        for="ropa">Ropa<span> (10)</span></label></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="accesorios" name="brand"><label
-                        for="accesorios">Accesorios<span> (8)</span></label></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="varios" name="brand"><label
-                        for="varios">Varios<span> (6)</span></label></li>
+                    <li class="filter-list"><label for="arte">Arte<span></span></label></li>
+                    <li class="filter-list"><label for="joyas">Joyería<span></span></label></li>
+                    <li class="filter-list"><label for="artesanias">Artesanías<span></span></label></li>
+                    <li class="filter-list"><label for="ropa">Ropa<span></span></label></li>
+                    <li class="filter-list"><label for="accesorios">Accesorios<span></span></label></li>
+                    <li class="filter-list"><label for="varios">Varios<span></span></label></li>
                   </ul>
                 </form>
               </li>
@@ -115,53 +109,10 @@
             <div class="top-filter-head">Filtros de búsqueda</div>
             <div class="common-filter">
               <div class="head">Departamentos</div>
-              <form action="#">
-                <ul>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label
-                      for="apple">Jutiapa<span>(9)</span></label></li>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="asus" name="brand"><label
-                      for="asus">Quiché<span>(2)</span></label></li>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="gionee" name="brand"><label
-                      for="gionee">Petén<span>(10)</span></label></li>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="micromax" name="brand"><label
-                      for="micromax">Escuintla<span>(8)</span></label></li>
-                  <li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label
-                      for="samsung">Alta Verapaz<span>(5)</span></label></li>
-                </ul>
-              </form>
             </div>
             <div class="common-filter">
               <div class="head">Tipo</div>
-              <form action="#">
-                <ul>
-                  <li class="filter-list">
-                    <input class="pixel-radio" type="radio" id="black" name="color">
-                    <label for="black">Moderno<span>(29)</span></label>
-                  </li>
-                  <li class="filter-list">
-                    <input class="pixel-radio" type="radio" id="balckleather" name="color">
-                    <label for="balckleather">Contemporáneo<span>(29)</span></label>
-                  </li>
-                  <li class="filter-list">
-                    <input class="pixel-radio" type="radio" id="blackred" name="color">
-                    <label for="blackred">Maya<span>(19)</span></label>
-                  </li>
-                </ul>
-              </form>
-            </div>
-            <div class="common-filter">
-              <div class="head">Precio</div>
-              <div class="price-range-area">
-                <div id="price-range"></div>
-                <div class="value-wrapper d-flex">
-                  <div class="price">Precio:</div>
-                  <span>$</span>
-                  <div id="lower-value"></div>
-                  <div class="to">a</div>
-                  <span>$</span>
-                  <div id="upper-value"></div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -170,7 +121,6 @@
           <div class="filter-bar d-flex flex-wrap align-items-center">
             <div>
               <div class="input-group filter-bar-search">
-                <input type="text" placeholder="Buscar">
                 <div class="input-group-append">
                   <button type="button"><i class="ti-search"></i></button>
                 </div>
