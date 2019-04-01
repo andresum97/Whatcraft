@@ -17,22 +17,26 @@
   <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
 
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBpdjvASysBzQSAXnSeM-CbxzO5whifi48",
-      authDomain: "whatcraft-c9fad.firebaseapp.com",
-      databaseURL: "https://whatcraft-c9fad.firebaseio.com",
-      projectId: "whatcraft-c9fad",
-      storageBucket: "whatcraft-c9fad.appspot.com",
-      messagingSenderId: "276386671353"
-    };
-    firebase.initializeApp(config);
-</script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+	<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyBpdjvASysBzQSAXnSeM-CbxzO5whifi48",
+		authDomain: "whatcraft-c9fad.firebaseapp.com",
+		databaseURL: "https://whatcraft-c9fad.firebaseio.com",
+		projectId: "whatcraft-c9fad",
+		storageBucket: "whatcraft-c9fad.appspot.com",
+		messagingSenderId: "276386671353"
+	};
+	firebase.initializeApp(config);
+	</script>
+
+
 </head>
 
-<body>
+<body onload="mostrarProductos();">
 
   <!--================ Start Header Menu Area =================-->
   <header class="header_area">
@@ -68,8 +72,9 @@
               <li class="nav-item"><button><i class="ti-help"></i></button></li>
               <li class="nav-item"><button><i class="ti-shopping-cart"></i><span
                     class="nav-shop__circle">3</span></button> </li>
-              <li class="nav-item"><a class="button button-header" href="confirmation.html">Ir a carrito</a></li>
-              <li class="nav-item"><button id='login' onClick="cerrar()" class="btn btn-outline-success my-2 my-sm-0" >Inicia Sesion</button></li>
+
+              <li class="nav-item"><a class="button button-header" href="cart.html">Ir a carrito</a></li>
+
             </ul>
           </div>
         </div>
@@ -175,8 +180,8 @@
           <!-- End Filter Bar -->
           <!-- Start Best Seller -->
           <section class="lattest-product-area pb-40 category-list">
-            <div class="row">
-              <div class="col-md-6 col-lg-4">
+            <div class="row" id="productos">
+              <!-- <div class="col-md-6 col-lg-4">
                 <div class="card text-center card-product">
                   <div class="card-product__img">
                     <img class="card-img" style="height: 270px;width: 263px;" src="img/product/product1.png" alt="">
@@ -187,7 +192,7 @@
                   </div>
                   <div class="card-body">
                     <p>Arte</p>
-                    <h4 class="card-product__title"><a href="#">Caballos galopando en la isla</a></h4>
+                    <h4 class="card-product__title" onclick="obtenerid('Ar1');"><a href="single-product.html">Caballos galopando en la isla</a></h4>
                     <p class="card-product__price">$150.00</p>
                   </div>
                 </div>
@@ -303,7 +308,7 @@
                     <p class="card-product__price">$150.00</p>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </section>
           <!-- End Best Seller -->
@@ -519,7 +524,9 @@
   <script src="vendors/jquery.ajaxchimp.min.js"></script>
   <script src="vendors/mail-script.js"></script>
   <script src="js/main.js"></script>
-  <script src="login-register.js"></script>
+  <!-- <script src="js/valores.js"></script> -->
+  <script src="js/productos.js"></script>
+
 </body>
 
 </html>
