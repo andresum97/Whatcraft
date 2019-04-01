@@ -130,6 +130,12 @@ function asignarID(id){
     });
 }
 
+function borrarCarrito(id){
+    var refprod = firebase.database().ref('carrito');
+    refprod.child(id).remove();
+    alert("Producto removido del carrito");
+}
+
 function asignarIDcarrito(id){
     alert("Se ha agregado este producto al carrito");
     asignarID(id);
