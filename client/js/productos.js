@@ -7,7 +7,9 @@ var largo =  document.getElementById("largo");
 var ancho =  document.getElementById("ancho");
 var peso =  document.getElementById("peso");
 var categoria =  document.getElementById("categoria");
-var productos = document.getElementById("productos")
+var productos = document.getElementById("productos");
+var carritos = document.getElementById("productoscarrito");
+var factura = document.getElementById("factura");
 // var ID = document.getElementById("Ar1");
 
 var rootRef = firebase.database().ref().child("pintura");
@@ -22,14 +24,16 @@ var rootRef = firebase.database().ref().child("pintura");
 //     var id = snap.child("pintura");
 // });
 
-let valorid = 1;
-var obraarte = '/1';
-function obtenerid(valor){
-     obraarte = '/'+Object.assign(valor);
-}
+// let valorid = 1;
+// var obraarte = '/1';
+// function obtenerid(valor){
+//      obraarte = '/'+Object.assign(valor);
+//      alert(obraarte);
+// }
 // alert('obra2'+valorid);
 
 // });
+alert(obraarte);
 var obra = firebase.database().ref('pintura'+obraarte+'/nombre');
 obra.once('value',function(snapshot){
     nombre.innerText = snapshot.val();
@@ -83,11 +87,148 @@ function HTMLmostrarproductos(id,name,price,cat,img){
       </div>
       <div class="card-body">
         <p>${cat}</p>
-        <h4 class="card-product__title" onclick="obtenerid("${id}");"><a href="single-product.html">${name}</a></h4>
-        <p class="card-product__price">Q"${price}"</p>
+        <h4 class="card-product__title" onclick="obtenerid(${id});"><a href="single-product.html">${name}</a></h4>
+        <p class="card-product__price">Q${price}</p>
       </div>
     </div>
   </div>`
+}
+
+function HTMLmostrarcarrito(name,price,img){
+    return `<tr>
+    <td>
+        <div class="media">
+            <div class="d-flex">
+                <img  style="height: 110px;width: 160px;"src="${img}" alt="">
+            </div>
+            <div class="media-body">
+                <p>${name}</p>
+            </div>
+        </div>
+    </td>
+    <td>
+        <h5>Q${price}.00</h5>
+    </td>
+    <td>
+        <div class="product_count">
+            <input type="text" name="qty" id="sst" maxlength="12" value="1"
+                title="Quantity:" class="input-text qty">
+            <button
+                onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+                class="increase items-count" type="button"><i
+                    class="lnr lnr-chevron-up"></i></button>
+            <button
+                onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) > 0 ) result.value--;return false;"
+                class="reduced items-count" type="button"><i
+                    class="lnr lnr-chevron-down"></i></button>
+        </div>
+    </td>
+    <td>
+        <h5>Q${price}.00</h5>
+    </td>
+</tr>`
+}
+
+function botonescarrito(total){
+    return ` <tr class="bottom_button">
+    <td>
+        <a class="button" href="#">Actualizar Carrito</a>
+    </td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td>
+        <h5>Subtotal</h5>
+    </td>
+    <td>
+        <h5>Q${total}.00</h5>
+    </td>
+</tr>
+<tr class="shipping_area">
+    <td class="d-none d-md-block">
+
+    </td>
+    <td></td>
+    <td>
+        <h5>Shipping</h5>
+    </td>
+    <td>
+        <div class="shipping_box">
+            <ul class="list">
+                <li><a href="#">Tarifa plana: $5.00</a></li>
+                <li><a href="#">Sin Shipping</a></li>
+                <li><a href="#">Tarifa interior: $10.00</a></li>
+                <li class="active"><a href="#">Envío local: $2.00</a></li>
+            </ul>
+            <br />
+            <a class="gray_btn" href="#">Actualizar datos</a>
+        </div>
+    </td>
+</tr>
+<tr class="out_button_area">
+    <td class="d-none-l"></td>
+    <td class=""></td>
+    <td></td>
+    <td>
+        <div class="checkout_btn_inner d-flex align-items-center">
+            <a class="gray_btn" href="category.html">Continuar comprando</a>
+            <a class="primary-btn ml-2" href="confirmation.html">Finalizar la compra</a>
+        </div>
+    </td>
+</tr>`
+}
+
+function HTMLfactura(name,precio){
+    return `<tr>
+    <td>
+      <p>${name}</p>
+    </td>
+    <td>
+      <h5>x 01</h5>
+    </td>
+    <td>
+      <p>Q${precio}.00</p>
+    </td>
+  </tr>`
+}
+
+function resultadofactura(total){
+    return`<tr>
+    <td>
+      <h4>Subtotal</h4>
+    </td>
+    <td>
+      <h5></h5>
+    </td>
+    <td>
+      <p>Q${total}.00</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h4>Shipping</h4>
+    </td>
+    <td>
+      <h5></h5>
+    </td>
+    <td>
+      <p>Tarfia plana: $50.00</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h4>Total</h4>
+    </td>
+    <td>
+      <h5></h5>
+    </td>
+    <td>
+      <h4>Q${total}.00</h4>
+    </td>
+  </tr> `
 }
 
 
@@ -120,6 +261,59 @@ function mostrarProductos(){
 
 });
 }
+function mostrarcarrito(){
+    var pro = firebase.database().ref().child("carrito");
+    var total = 0;
+    pro.on('value',function(snapshot){
+        var key = Object.keys(snapshot.val());
+        // console.log(key);
+        for(var i=0; i<key.length;i++){
+            var id = key[i];
+            var pro1 = firebase.database().ref('carrito/'+id+'/nombre');//Inicio de pedir nombre
+            pro1.on('value',function(snapshot){
+                var name = snapshot.val();
+                var pro2 = firebase.database().ref('carrito/'+id+'/precio');//Inicio de pedir nombre
+                pro2.on('value',function(snapshot){
+                    var price = snapshot.val();
+                    var pro3 = firebase.database().ref('carrito/'+id+'/url');//Inicio de pedir nombre
+                    pro3.on('value',function(snapshot){
+                        var photo = snapshot.val();
+                        total += price;
+                        carritos.innerHTML+=`${HTMLmostrarcarrito(name,price,photo)}`;
+                    });
+                });
+            });
+        }
+        carritos.innerHTML+=`${botonescarrito(total)}`;
+    });
+}
+
+function mostrarfactura(){
+    var pro = firebase.database().ref().child("carrito");
+    var total = 0;
+    pro.on('value',function(snapshot){
+        var key = Object.keys(snapshot.val());
+        // console.log(key);
+        for(var i=0; i<key.length;i++){
+            var id = key[i];
+            var pro1 = firebase.database().ref('carrito/'+id+'/nombre');//Inicio de pedir nombre
+            pro1.on('value',function(snapshot){
+                var name = snapshot.val();
+                var pro2 = firebase.database().ref('carrito/'+id+'/precio');//Inicio de pedir nombre
+                pro2.on('value',function(snapshot){
+                    var price = snapshot.val();
+                    var pro3 = firebase.database().ref('carrito/'+id+'/url');//Inicio de pedir nombre
+                    pro3.on('value',function(snapshot){
+                        var photo = snapshot.val();
+                        total += price;
+                        factura.innerHTML+=`${HTMLfactura(name,price)}`;
+                    });
+                });
+            });
+        }
+        factura.innerHTML+=`${resultadofactura(total)}`;
+    });
+}
 
 
 function ingresarProducto(arteId,nom,art,desc,lar,anch,pes,prec,url,cat){
@@ -135,4 +329,29 @@ function ingresarProducto(arteId,nom,art,desc,lar,anch,pes,prec,url,cat){
         URL: url
     });   
 }
+
+function agregarcarrito(id){
+    var pro1 = firebase.database().ref('pintura/'+id+'/nombre');//Inicio de pedir nombre
+    pro1.on('value',function(snapshot){
+        var name = snapshot.val();
+        var pro2 = firebase.database().ref('pintura/'+id+'/precio');//Inicio de pedir producto
+        pro2.on('value',function(snapshot){
+            var price = snapshot.val();
+            var pro3 = firebase.database().ref('pintura/'+id+'/URL');
+            pro3.on('value',function(snapshot){
+                photo = snapshot.val();
+                firebase.database().ref('carrito/'+id).set({
+                    nombre: name,
+                    precio: price,
+                    url: photo
+                });
+            });
+        });
+    });
+ 
+    // var firebaseRef = firebase.database().ref();
+    // firebaseRef.child("Carrito").set(null);
+}
+
+// agregarcarrito(1);
 

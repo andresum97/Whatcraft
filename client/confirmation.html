@@ -17,9 +17,23 @@
   <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+	<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyBpdjvASysBzQSAXnSeM-CbxzO5whifi48",
+		authDomain: "whatcraft-c9fad.firebaseapp.com",
+		databaseURL: "https://whatcraft-c9fad.firebaseio.com",
+		projectId: "whatcraft-c9fad",
+		storageBucket: "whatcraft-c9fad.appspot.com",
+		messagingSenderId: "276386671353"
+	};
+	firebase.initializeApp(config);
+	</script>
+
 </head>
 
-<body>
+<body onload="mostrarfactura();">
 
   <!--================ Start Header Menu Area =================-->
   <header class="header_area">
@@ -151,8 +165,8 @@
                 <th scope="col">Total</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
+            <tbody id="factura">
+              <!-- <tr>
                 <td>
                   <p>Cuadros pintados a mano</p>
                 </td>
@@ -206,7 +220,7 @@
                 <td>
                   <h4>$2210.00</h4>
                 </td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </div>
@@ -316,6 +330,7 @@
   <script src="vendors/jquery.ajaxchimp.min.js"></script>
   <script src="vendors/mail-script.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/productos.js"></script>
 </body>
 
 </html>
