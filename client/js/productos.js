@@ -131,13 +131,13 @@ function asignarID(id){
 }
 
 function asignarIDcarrito(id){
+    alert("Se ha agregado este producto al carrito");
     asignarID(id);
     var refid = firebase.database().ref('id/valor');
     refid.on('value',function(snapshot){
         valor = snapshot.val();
         agregarcarrito(valor);
     });
-
 }
 
 function carrito2(){
