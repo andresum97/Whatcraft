@@ -27,7 +27,7 @@ var obraarte = '/1';
 function obtenerid(valor){
      obraarte = '/'+Object.assign(valor);
 }
-alert('obra2'+valorid);
+// alert('obra2'+valorid);
 
 // });
 var obra = firebase.database().ref('pintura'+obraarte+'/nombre');
@@ -72,45 +72,45 @@ obra.once('value',function(snapshot){
 });
 
 function HTMLmostrarproductos(id,name,price,cat,img){
-    return '<div class="col-md-6 col-lg-4">'+
-    '<div class="card text-center card-product">'+
-      '<div class="card-product__img">'+
-        '<img class="card-img" style="height: 270px;width: 263px;" src="${img}" alt="">'+
-        '<ul class="card-product__imgOverlay">'+
-          '<li><button><i class="ti-search"></i></button></li>'+
-          '<li><button><i class="ti-shopping-cart"></i></button></li>'+
-        '</ul>'+
-      '</div>'+
-      '<div class="card-body">'+
-        '<p>${cat}</p>'+
-        '<h4 class="card-product__title" onclick="obtenerid(${id});"><a href="single-product.html">${name}</a></h4>'+
-        '<p class="card-product__price">${price}</p>'+
-      '</div>'+
-    '</div>'+
-  '</div>'
+    return `<div class="col-md-6 col-lg-4">
+    <div class="card text-center card-product">
+      <div class="card-product__img">
+        <img class="card-img" style="height: 270px;width: 263px;" src="${img}" alt="">
+        <ul class="card-product__imgOverlay">
+          <li><button><i class="ti-search"></i></button></li>
+          <li><button><i class="ti-shopping-cart"></i></button></li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <p>${cat}</p>
+        <h4 class="card-product__title" onclick="obtenerid("${id}");"><a href="single-product.html">${name}</a></h4>
+        <p class="card-product__price">Q"${price}"</p>
+      </div>
+    </div>
+  </div>`
 }
 
 
 function mostrarProductos(){
     var lista;
-    var productos = firebase.database().ref().child("pintura");
-    productos.on('value',function(snapshot){
+    var pro = firebase.database().ref().child("pintura");
+    pro.on('value',function(snapshot){
     var key = Object.keys(snapshot.val());
     for(var i=0; i <key.length;i++){
         var id = key[i];
         var pro1 = firebase.database().ref('pintura/'+id+'/nombre');//Inicio de pedir nombre
         pro1.on('value',function(snapshot){
-            var nombre = snapshot.val();
+            var name = snapshot.val();
             var pro2 = firebase.database().ref('pintura/'+id+'/precio');//Inicio de pedir producto
             pro2.on('value',function(snapshot){
-                var precio = snapshot.val();
+                var price = snapshot.val();
                 var pro3 = firebase.database().ref('pintura/'+id+'/categoria');//Inicio de pedir categoria
                     pro3.on('value',function(snapshot){
-                    var categoria= snapshot.val();
+                    var category= snapshot.val();
                     var pro4 = firebase.database().ref('pintura/'+id+'/URL');//Inicio de pedir imagen
                     pro4.on('value',function(snapshot){
-                        var url = snapshot.val();
-                        productos.innerHTML+='${HTMLmostrarproductos(id,nombre,precio,categoria,url)}';
+                        var photo = snapshot.val();
+                        productos.innerHTML+=`${HTMLmostrarproductos(id,name,price,category,photo)}`;
                         // console.log(id+','+nombre+','+precio+','+categoria+','+url);
                     });
                 });//fin de categoria
@@ -120,7 +120,7 @@ function mostrarProductos(){
 
 });
 }
-mostrarProductos();
+
 
 function ingresarProducto(arteId,nom,art,desc,lar,anch,pes,prec,url,cat){
     firebase.database().ref('pintura/'+arteId).set({
