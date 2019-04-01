@@ -27,7 +27,7 @@
       messagingSenderId: "276386671353"
     };
     firebase.initializeApp(config);
-</script>
+  </script>
 </head>
 
 <body>
@@ -37,7 +37,8 @@
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand logo_h" href="index.html"><img  style="width: 120px;height: auto;margin-left: -10px;" src="img/logo.png" alt=""></a>
+          <a class="navbar-brand logo_h" href="index.html"><img style="width: 120px;height: auto;margin-left: -10px;"
+              src="img/logo.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
@@ -61,10 +62,7 @@
             </ul>
 
             <ul class="nav-shop">
-              <li class="nav-item"><button><i class="ti-search"></i></button></li>
               <li class="nav-item"><button><i class="ti-help"></i></button></li>
-              <li class="nav-item"><button><i class="ti-shopping-cart"></i><span
-                    class="nav-shop__circle">3</span></button> </li>
             </ul>
           </div>
         </div>
@@ -77,62 +75,65 @@
   <section class="section-margin--small">
     <div class="container">
       <h3>¿Quiénes Somos?</h3> </br>
-     
-      </div>
+
+    </div>
 
 
-      <div class="row">
-        <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
-          <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-home"></i></span>
-            <div class="media-body">
-              <h3>Guatemala, Guatemala</h3>
-              <p>18 Avenida 11-95, Guatemala</p>
-            </div>
-          </div>
-          <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-headphone"></i></span>
-            <div class="media-body">
-              <h3><a href="tel:43000805"> (502) 4300 0805</a></h3>
-              <p>Lunes a Viernes 7am to 6pm</p>
-            </div>
-          </div>
-          <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-email"></i></span>
-            <div class="media-body">
-              <h3><a href="mailto:support@wcgt.com">support@wcgt.com</a></h3>
-              <p>¡Envíanos tus comentarios!</p>
-            </div>
+    <div class="row">
+      <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+        <div class="media contact-info">
+          <span class="contact-info__icon"><i class="ti-home"></i></span>
+          <div class="media-body">
+            <h3>Guatemala, Guatemala</h3>
+            <p>18 Avenida 11-95, Guatemala</p>
           </div>
         </div>
-        <div class="col-md-8 col-lg-9">
-          <form action="#/" class="form-contact contact_form" action="contact_process.php" method="post"
-            id="contactForm" novalidate="novalidate">
-            <div class="row">
-              <div class="col-lg-5">
-                <div class="form-group">
-                  <input class="form-control" name="name" id="name" type="text" style="font-size: 14px" placeholder="Ingresa tu nombre completo">
-                </div>
-                <div class="form-group">
-                  <input class="form-control" name="email" id="email" type="email" style="font-size: 14px" placeholder="Ingresa tu correo electrónico">
-                </div>
-                <div class="form-group">
-                  <input class="form-control" name="subject" id="subject" type="text" style="font-size: 14px" placeholder="Asunto">
-                </div>
-              </div>
-              <div class="col-lg-7">
-                <div class="form-group">
-                  <textarea class="form-control different-control w-100" name="message" id="message" style="font-size: 14px"  cols="30" rows="5"
-                    placeholder="Ingresa tus comentarios"></textarea>
-                </div>
-              </div>
-            </div>
-            <div class="form-group text-center text-md-right mt-3">
-              <button type="submit" class="button button--active button-contactForm">Enviar un mensaje</button>
-            </div>
-          </form>
+        <div class="media contact-info">
+          <span class="contact-info__icon"><i class="ti-headphone"></i></span>
+          <div class="media-body">
+            <h3><a href="tel:43000805"> (502) 4300 0805</a></h3>
+            <p>Lunes a Viernes 7am to 6pm</p>
+          </div>
+        </div>
+        <div class="media contact-info">
+          <span class="contact-info__icon"><i class="ti-email"></i></span>
+          <div class="media-body">
+            <h3><a href="mailto:support@wcgt.com">support@wcgt.com</a></h3>
+            <p>¡Envíanos tus comentarios!</p>
+          </div>
         </div>
       </div>
+      <div class="col-md-8 col-lg-9">
+        <form action="#/" class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
+          novalidate="novalidate">
+          <div class="row">
+            <div class="col-lg-5">
+              <div class="form-group">
+                <input class="form-control" name="name" id="name" type="text" style="font-size: 14px"
+                  placeholder="Ingresa tu nombre completo">
+              </div>
+              <div class="form-group">
+                <input class="form-control" name="email" id="email" type="email" style="font-size: 14px"
+                  placeholder="Ingresa tu correo electrónico">
+              </div>
+              <div class="form-group">
+                <input class="form-control" name="subject" id="subject" type="text" style="font-size: 14px"
+                  placeholder="Asunto">
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="form-group">
+                <textarea class="form-control different-control w-100" name="message" id="message"
+                  style="font-size: 14px" cols="30" rows="5" placeholder="Ingresa tus comentarios"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-group text-center text-md-right mt-3">
+            <button type="submit" class="button button--active button-contactForm">Enviar un mensaje</button>
+          </div>
+        </form>
+      </div>
+    </div>
     </div>
   </section>
   <!-- ================ contact section end ================= -->
