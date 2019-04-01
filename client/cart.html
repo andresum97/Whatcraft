@@ -17,9 +17,25 @@
     <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
 
     <link rel="stylesheet" href="css/style.css">
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+	<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyBpdjvASysBzQSAXnSeM-CbxzO5whifi48",
+		authDomain: "whatcraft-c9fad.firebaseapp.com",
+		databaseURL: "https://whatcraft-c9fad.firebaseio.com",
+		projectId: "whatcraft-c9fad",
+		storageBucket: "whatcraft-c9fad.appspot.com",
+		messagingSenderId: "276386671353"
+	};
+	firebase.initializeApp(config);
+	</script>
+
 </head>
 
-<body>
+<body onload="mostrarcarrito();">
 
     <!--================ Start Header Menu Area =================-->
     <header class="header_area">
@@ -80,8 +96,8 @@
                                 <th scope="col">Total</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
+                        <tbody id="productoscarrito">
+                            <!-- <tr>
                                 <td>
                                     <div class="media">
                                         <div class="d-flex">
@@ -176,8 +192,8 @@
                                 <td>
                                     <h5>$160.00</h5>
                                 </td>
-                            </tr>
-                            <tr class="bottom_button">
+                            </tr> -->
+                            <!-- <tr class="bottom_button">
                                 <td>
                                     <a class="button" href="#">Actualizar Carrito</a>
                                 </td>
@@ -225,7 +241,7 @@
                                         <a class="primary-btn ml-2" href="confirmation.html">Finalizar la compra</a>
                                     </div>
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -334,6 +350,9 @@
     <script src="vendors/jquery.ajaxchimp.min.js"></script>
     <script src="vendors/mail-script.js"></script>
     <script src="js/main.js"></script>
+
+    <script src="js/productos.js"></script>
+
 </body>
 
 </html>

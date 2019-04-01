@@ -17,6 +17,19 @@
 	<link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
 
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBpdjvASysBzQSAXnSeM-CbxzO5whifi48",
+        authDomain: "whatcraft-c9fad.firebaseapp.com",
+        databaseURL: "https://whatcraft-c9fad.firebaseio.com",
+        projectId: "whatcraft-c9fad",
+        storageBucket: "whatcraft-c9fad.appspot.com",
+        messagingSenderId: "276386671353"
+      };
+      firebase.initializeApp(config);
+	</script>
 </head>
 
 <body>
@@ -78,7 +91,7 @@
 						<div class="hover">
 							<h4>Eres nuevo en este sitio?</h4>
 							<p>Esta es una página en donde podrás adquirir cualquier arte 100% guatemalteco</p>
-							<a class="button button-account" href="register.html">Crear una cuenta</a>
+							<a class="button button-account" href="register.html?#/">Crear una cuenta</a>
 						</div>
 					</div>
 				</div>
@@ -87,12 +100,11 @@
 						<h3>Ingresa sesión para continuar</h3>
 						<form class="row login_form" action="#/" id="contactForm">
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="name" name="name"
-									placeholder="Nombre de Usuario" onfocus="this.placeholder = ''"
-									onblur="this.placeholder = 'Nombre de usuario'">
+								<input id="emailL" type="email" class="form-control" placeholder="Correo electrónico"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Correo electrónico'">
 							</div>
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Contraseña"
+								<input id="passwordL" type="password" class="form-control" placeholder="Contraseña"
 									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Contraseña'">
 							</div>
 							<div class="col-md-12 form-group">
@@ -100,8 +112,11 @@
 								</div>
 							</div>
 							<div class="col-md-12 form-group">
-								<button type="submit" value="submit" class="button button-login w-100">Ingresar</button>
-								<a href="#">Olvidé mi contraseña?</a>
+								<button onClick="ingresar()" class="button button-login w-100">Ingresar</button>
+								<a href="cambioPass.html">Olvidé mi contraseña?</a>
+							</div>
+							<div id ='alertaL'>
+
 							</div>
 						</form>
 					</div>
@@ -212,6 +227,7 @@
 	<script src="vendors/jquery.ajaxchimp.min.js"></script>
 	<script src="vendors/mail-script.js"></script>
 	<script src="js/main.js"></script>
+	<script src="login-register.js"></script>
 </body>
 
 </html>

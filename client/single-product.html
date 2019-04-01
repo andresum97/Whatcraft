@@ -16,9 +16,25 @@
 	<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
 
 	<link rel="stylesheet" href="css/style.css">
+
+	
+	<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+	<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyBpdjvASysBzQSAXnSeM-CbxzO5whifi48",
+		authDomain: "whatcraft-c9fad.firebaseapp.com",
+		databaseURL: "https://whatcraft-c9fad.firebaseio.com",
+		projectId: "whatcraft-c9fad",
+		storageBucket: "whatcraft-c9fad.appspot.com",
+		messagingSenderId: "276386671353"
+	};
+	firebase.initializeApp(config);
+	</script>
+
 </head>
 
-<body>
+<body onload="obtenerID();">
 
 	<!--================ Start Header Menu Area =================-->
 	<header class="header_area">
@@ -72,24 +88,19 @@
 				<div class="col-lg-6">
 					<div class="owl-carousel owl-theme s_Product_carousel">
 						<div class="single-prd-item">
-							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
+							<img id="imagen" class="img-fluid" src="" alt="">
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-5 offset-lg-1">
 					<div class="s_product_text">
-						<h3>Faded SkyBlu Denim Jeans</h3>
-						<h2>$149.99</h2>
+						<h3 id="nombrearte"></h3>
+						<h2 id="precio"></h2>
 						<ul class="list">
-							<li><a class="active" href="#"><span>Categoría</span> : Arte</a></li>
-							<li><a href="#"><span>Disponibilidad</span> : In Stock</a></li>
+							<li id="categoria"><a class="active" href="#"><span>Categoría</span> </a></li>
+							<li id="artista"><a href="#"><span>Artista</span></a></li>
 						</ul>
-						<p>Mill Oil is an innovative oil filled radiator with the most modern technology. If you are
-							looking for
-							something that can make your interior look awesome, and at the same time give you the
-							pleasant warm
-							feeling
-							during the winter.</p>
+						<p id="descripcion"></p>
 						<div class="product_count">
 							<label for="qty">Cantidad:</label>
 							<button
@@ -97,13 +108,12 @@
 								class="increase items-count" type="button"><i class="ti-angle-left"></i></button>
 							<input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Cantidad:"
 								class="input-text qty">
-							<button
-								onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-								class="reduced items-count" type="button"><i class="ti-angle-right"></i></button>
+							<button 
+								class="reduced items-count" type="button" onclick="carrito2()"><i class="ti-angle-right"></i></button>
 							<a class="button primary-btn" href="cart.html">Agregar a carrito</a>
 						</div>
 						<div class="card_area d-flex align-items-center">
-							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
+							<a onclick="ingresarProducto('Ar1','Velas de traje Tipico','Ana Maria López','Velas hechas a mano traidas desde Quetzaltenango, que pueden enbellezar cualquier sala con esta representación de trajes típicos','-','-',45,150,'http://www.esquisses.net/wp-content/uploads/2014/09/chandelle2.jpg','Artesanias')" class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
 						</div>
 					</div>
@@ -175,7 +185,7 @@
 										<h5>Largo</h5>
 									</td>
 									<td>
-										<h5>128mm</h5>
+										<h5 id="largo">-</h5>
 									</td>
 								</tr>
 								<tr>
@@ -183,7 +193,7 @@
 										<h5>Ancho</h5>
 									</td>
 									<td>
-										<h5>508mm</h5>
+										<h5 id="ancho">-</h5>
 									</td>
 								</tr>
 								<tr>
@@ -191,7 +201,7 @@
 										<h5>Peso</h5>
 									</td>
 									<td>
-										<h5>52gm</h5>
+										<h5 id="peso">-</h5>
 									</td>
 								</tr>
 							</tbody>
@@ -304,6 +314,8 @@
 	<script src="vendors/jquery.ajaxchimp.min.js"></script>
 	<script src="vendors/mail-script.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/productos.js"></script>
+
 </body>
 
 </html>
