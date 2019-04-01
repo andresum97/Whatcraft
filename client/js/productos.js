@@ -7,6 +7,7 @@ var largo =  document.getElementById("largo");
 var ancho =  document.getElementById("ancho");
 var peso =  document.getElementById("peso");
 var categoria =  document.getElementById("categoria");
+var productos = document.getElementById("productos")
 // var ID = document.getElementById("Ar1");
 
 var rootRef = firebase.database().ref().child("pintura");
@@ -21,14 +22,12 @@ var rootRef = firebase.database().ref().child("pintura");
 //     var id = snap.child("pintura");
 // });
 
-var valorid;
+let valorid = 1;
+var obraarte = '/1';
 function obtenerid(valor){
-    valorid =  valor;
-    console.log('prueba'+valor);
+     obraarte = '/'+Object.assign(valor);
 }
-
-var obraarte = '/'+String(valorid);
-console.log('coso'+valorid);
+alert('obra2'+valorid);
 
 // });
 var obra = firebase.database().ref('pintura'+obraarte+'/nombre');
@@ -72,6 +71,25 @@ obra.once('value',function(snapshot){
     ancho.innerText = snapshot.val()+' cm';
 });
 
+function HTMLmostrarproductos(id,name,price,cat,img){
+    return '<div class="col-md-6 col-lg-4">'+
+    '<div class="card text-center card-product">'+
+      '<div class="card-product__img">'+
+        '<img class="card-img" style="height: 270px;width: 263px;" src="${img}" alt="">'+
+        '<ul class="card-product__imgOverlay">'+
+          '<li><button><i class="ti-search"></i></button></li>'+
+          '<li><button><i class="ti-shopping-cart"></i></button></li>'+
+        '</ul>'+
+      '</div>'+
+      '<div class="card-body">'+
+        '<p>${cat}</p>'+
+        '<h4 class="card-product__title" onclick="obtenerid(${id});"><a href="single-product.html">${name}</a></h4>'+
+        '<p class="card-product__price">${price}</p>'+
+      '</div>'+
+    '</div>'+
+  '</div>'
+}
+
 
 function mostrarProductos(){
     var lista;
@@ -89,7 +107,12 @@ function mostrarProductos(){
                 var pro3 = firebase.database().ref('pintura/'+id+'/categoria');//Inicio de pedir categoria
                     pro3.on('value',function(snapshot){
                     var categoria= snapshot.val();
-                    console.log(id+','+nombre+','+precio+','+categoria);
+                    var pro4 = firebase.database().ref('pintura/'+id+'/URL');//Inicio de pedir imagen
+                    pro4.on('value',function(snapshot){
+                        var url = snapshot.val();
+                        productos.innerHTML+='${HTMLmostrarproductos(id,nombre,precio,categoria,url)}';
+                        // console.log(id+','+nombre+','+precio+','+categoria+','+url);
+                    });
                 });//fin de categoria
             });//fin de precio
         });//fin de nombre
