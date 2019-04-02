@@ -247,7 +247,7 @@ function botonescarrito(total){
     <td>
         <div class="checkout_btn_inner d-flex align-items-center">
             <a class="gray_btn" href="category.html">Continuar comprando</a>
-            <a class="primary-btn ml-2" href="confirmation.html">Finalizar la compra</a>
+            <a class="primary-btn ml-2" href="checkout.html">Finalizar la compra</a>
         </div>
     </td>
 </tr>`
