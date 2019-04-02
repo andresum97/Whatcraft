@@ -1,5 +1,5 @@
-function search(){
-    document.location.href = 'search.html';
+function help(){
+    document.location.href = 'help.html';
 }
 
 function cart() {
