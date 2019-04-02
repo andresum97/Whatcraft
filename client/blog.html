@@ -16,18 +16,18 @@
 
     <link rel="stylesheet" href="css/style.css">
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBpdjvASysBzQSAXnSeM-CbxzO5whifi48",
-      authDomain: "whatcraft-c9fad.firebaseapp.com",
-      databaseURL: "https://whatcraft-c9fad.firebaseio.com",
-      projectId: "whatcraft-c9fad",
-      storageBucket: "whatcraft-c9fad.appspot.com",
-      messagingSenderId: "276386671353"
-    };
-    firebase.initializeApp(config);
-</script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBpdjvASysBzQSAXnSeM-CbxzO5whifi48",
+            authDomain: "whatcraft-c9fad.firebaseapp.com",
+            databaseURL: "https://whatcraft-c9fad.firebaseio.com",
+            projectId: "whatcraft-c9fad",
+            storageBucket: "whatcraft-c9fad.appspot.com",
+            messagingSenderId: "276386671353"
+        };
+        firebase.initializeApp(config);
+    </script>
 </head>
 
 <body>
@@ -63,9 +63,10 @@
                         </ul>
 
                         <ul class="nav-shop">
-                            <li class="nav-item"><button><i href="help.html" class="ti-help"></i></button></li>
-                            <li class="nav-item"><button><i href="cart.html" class="ti-shopping-cart"></i><span
-                                        class="nav-shop__circle">3</span></button> </li>
+                            <li class="nav-item"><a onClick="search()"><i href="search.html" class="ti-help"></i></a>
+                            </li>
+                            <li class="nav-item"><a onClick="cart()"><i href="cart.html"
+                                        class="ti-shopping-cart"></i><span class="nav-shop__circle"></span></a> </li>
                             <li class="nav-item"><a class="button button-header" href="category.html">Ver productos</a>
                             </li>
                         </ul>
@@ -447,6 +448,7 @@
     <script src="vendors/mail-script.js"></script>
     <script src="js/main.js"></script>
     <script src="login-register.js"></script>
+    <script src="js/s-c.js"></script>
 </body>
 
 </html>
