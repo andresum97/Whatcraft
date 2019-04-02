@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>WhatCraft Shop - Contact</title>
+  <title>WhatCraft Shop - help</title>
   <link rel="icon" href="img/Fevicon.png" type="image/png">
   <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
@@ -27,7 +27,7 @@
       messagingSenderId: "276386671353"
     };
     firebase.initializeApp(config);
-</script>
+  </script>
 </head>
 
 <body>
@@ -37,7 +37,8 @@
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand logo_h" href="index.html"><img  style="width: 120px;height: auto;margin-left: -10px;" src="img/logo.png" alt=""></a>
+          <a class="navbar-brand logo_h" href="index.html"><img style="width: 120px;height: auto;margin-left: -10px;"
+              src="img/logo.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
@@ -75,64 +76,48 @@
   <section class="section-margin--small">
     <div class="container">
       <h3>Ayuda</h3> </br>
-      <div class="d-none d-sm-block mb-5 pb-4">
-        
-
+      <div class="d-none d-sm-block mb-5 pb-0">
+        <p>A continuación, encontrarás los pasos que deberás de realzar para llevar a cabo una compra</p>
       </div>
-
-
       <div class="row">
-        <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+        <div class="col-md-8 col-lg-6 mb-4 mb-md-0">
           <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <span class="contact-info__icon"><i class="ti-user"></i></span>
             <div class="media-body">
-              <h3>Guatemala, Guatemala</h3>
-              <p>18 Avenida 11-95, Guatemala</p>
+              <h3>Debes de iniciar sesión</h3>
+              <p>Para poder realizar una compra debes de estar registado en nuestra página</p>
             </div>
           </div>
           <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-headphone"></i></span>
+            <span class="contact-info__icon"><i class="ti-list"></i></span>
             <div class="media-body">
-              <h3><a href="tel:43000805"> (502) 4300 0805</a></h3>
-              <p>Lunes a Viernes 7am to 6pm</p>
+              <h3>Dirígete a la sección de <a href="category.html"> categorías</a> y selecciona el producto que te gusta</h3>
+              <p>Recuerda que todo nuestro producto es 100% guatemalteco </p>
             </div>
           </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-shopping-cart"></i></span>
+            <div class="media-body">
+              <h3>Agrega tu producto al carrito <a href="cart.html"> y continúa con tu compra</a> puedes seleccionar más productos si deseas</h3>
+              <p>Recibimos cualquier método de pago</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-money"></i></span>
+            <div class="media-body">
+              <h3>Paga por tu producto</h3>
+            </div>
+          </div>
+        </br>
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-email"></i></span>
             <div class="media-body">
-              <h3><a href="mailto:support@wcgt.com">support@wcgt.com</a></h3>
-              <p>¡Envíanos tus comentarios!</p>
+              <h3>Cualquier problema con tu compra puedes escribirnos a <a href="mailto:support@wcgt.com">support@wcgt.com</a></h3>
             </div>
           </div>
         </div>
-        <div class="col-md-8 col-lg-9">
-          <form action="#/" class="form-contact contact_form" action="contact_process.php" method="post"
-            id="contactForm" novalidate="novalidate">
-            <div class="row">
-              <div class="col-lg-5">
-                <div class="form-group">
-                  <input class="form-control" name="name" id="name" type="text" style="font-size: 14px" placeholder="Ingresa tu nombre completo">
-                </div>
-                <div class="form-group">
-                  <input class="form-control" name="email" id="email" type="email" style="font-size: 14px" placeholder="Ingresa tu correo electrónico">
-                </div>
-                <div class="form-group">
-                  <input class="form-control" name="subject" id="subject" type="text" style="font-size: 14px" placeholder="Asunto">
-                </div>
-              </div>
-              <div class="col-lg-7">
-                <div class="form-group">
-                  <textarea class="form-control different-control w-100" name="message" id="message" style="font-size: 14px"  cols="30" rows="5"
-                    placeholder="Ingresa tus comentarios"></textarea>
-                </div>
-              </div>
-            </div>
-            <div class="form-group text-center text-md-right mt-3">
-              <button type="submit" class="button button--active button-contactForm">Enviar un mensaje</button>
-            </div>
-          </form>
-        </div>
       </div>
+    </div>
     </div>
   </section>
   <!-- ================ contact section end ================= -->
