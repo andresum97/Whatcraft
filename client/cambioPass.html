@@ -18,17 +18,17 @@
 
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyBpdjvASysBzQSAXnSeM-CbxzO5whifi48",
-        authDomain: "whatcraft-c9fad.firebaseapp.com",
-        databaseURL: "https://whatcraft-c9fad.firebaseio.com",
-        projectId: "whatcraft-c9fad",
-        storageBucket: "whatcraft-c9fad.appspot.com",
-        messagingSenderId: "276386671353"
-      };
-      firebase.initializeApp(config);
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyBpdjvASysBzQSAXnSeM-CbxzO5whifi48",
+			authDomain: "whatcraft-c9fad.firebaseapp.com",
+			databaseURL: "https://whatcraft-c9fad.firebaseio.com",
+			projectId: "whatcraft-c9fad",
+			storageBucket: "whatcraft-c9fad.appspot.com",
+			messagingSenderId: "276386671353"
+		};
+		firebase.initializeApp(config);
 	</script>
 </head>
 
@@ -50,27 +50,8 @@
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto mr-auto">
 							<li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-									aria-expanded="false">Productos</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" style="font-size: 15px" href="category.html">Categorías</a>
-									</li>
-									<li class="nav-item"><a class="nav-link" style="font-size: 15px" href="single-product.html">Detalle de
-											producto</a></li>
-								</ul>
-							</li>
 							<li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-							<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
 							<li class="nav-item"><a class="nav-link" href="us.html">¿Quiénes somos?</a></li>
-						</ul>
-
-						<ul class="nav-shop">
-							<li class="nav-item"><button><i class="ti-search"></i></button></li>
-							<li class="nav-item"><button><i class="ti-help"></i></button></li>
-							<li class="nav-item"><button><i class="ti-shopping-cart"></i><span
-										class="nav-shop__circle">3</span></button> </li>
-							<li class="nav-item"><a class="button button-header" href="#">Comprar ahora</a></li>
 						</ul>
 					</div>
 				</div>
@@ -97,7 +78,7 @@
 						<h3>Cambio de Contraseña</h3>
 						<form class="row login_form" action="#/" id="contactForm">
 							<div class="col-md-12 form-group">
-								<input id="emailP"  class="form-control" placeholder="Ingresa tu Correo electrónico"
+								<input id="emailP" class="form-control" placeholder="Ingresa tu Correo electrónico"
 									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Correo electrónico'">
 							</div>
 
@@ -107,9 +88,9 @@
 							</div>
 							<div class="col-md-12 form-group">
 								<button onClick="cambioPass()" class="button button-login w-100">Enviar</button>
-								
+
 							</div>
-							<div id ='alertaL'>
+							<div id='alertaL'>
 
 							</div>
 						</form>
@@ -222,6 +203,7 @@
 	<script src="vendors/mail-script.js"></script>
 	<script src="js/main.js"></script>
 	<script src="login-register.js"></script>
+	<script src="js/s-c.js"></script>
 </body>
 
 </html>
